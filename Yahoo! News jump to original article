@@ -1,0 +1,14 @@
+
+[Patterns]
+Name = "Yahoo! News | jump to original article beta-20110927"
+Active = TRUE
+URL = "(headlines|[^.]+.news).yahoo.co.jp/ $TYPE(htm)"
+Limit = 500
+Match = "(<h1 [^>]+>\0</h1> <p [^>]+> )\#<a [^>]+>\1</a>"
+Replace = "\#"
+          "<a href="http://www.google.co.jp/search?q=\0+\1+"
+          "-site:yahoo.co.jp+-site:livedoor.co.jp+-livedoor.com+-site:infoseek.co.jp+"
+          "-biglobe.ne.jp+-goo.ne.jp+-so-net.ne.jp+-asahi.com"
+          "&ie=euc_jp&pws=0&btnI=I%27m+Feeling+Lucky">"
+          "&raquo;Read original on: \1</a>"
+
